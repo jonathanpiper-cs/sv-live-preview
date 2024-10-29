@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^5.2.8",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.0",
@@ -27,5 +28,10 @@
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0",
 		"vite": "^5.0.3"
+	},
+	"dependencies": {
+		"@contentstack/delivery-sdk": "^4.3.0",
+		"@contentstack/live-preview-utils": "^2.0.4",
+		"contentstack": "^3.22.0"
 	}
 }
