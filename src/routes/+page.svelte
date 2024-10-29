@@ -3,8 +3,14 @@
 
 	/** @type {import('./$types').PageData}*/
 	import { invalidate } from '$app/navigation';
-	// import { onMount } from 'svelte';
-	export let data;
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} data - import { onMount } from 'svelte';
+	 */
+
+	/** @type {Props} */
+	let { data } = $props();
 	const entry = data ? data.entry : null;
 </script>
 
