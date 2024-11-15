@@ -12,7 +12,7 @@
 	</div>
 	<div class="flex flex-row gap-5 leading-relaxed">
 		{#each data.navigation as nav, index}
-			<a href={nav.link.href} data-cslp={data.$[`navigation__${index}`]} class="mt-2 text-xl text-blue-500 hover:underline">{nav.link.title}</a
+			<a data-sveltekit-reload href={nav.link.href} data-cslp={data.$[`navigation__${index}`]} class="mt-2 text-xl text-blue-500 hover:underline">{nav.link.title}</a
 			>
 		{/each}
 	</div>

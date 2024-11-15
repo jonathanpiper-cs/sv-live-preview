@@ -6,21 +6,25 @@
 	import Header from '$lib/components/Header.svelte';
 	import type { LayoutData } from './$types';
 	import { type Snippet } from 'svelte';
-	import { setContext } from 'svelte';
+	// import { setContext } from 'svelte';
 	import Personalize from '@contentstack/personalize-edge-sdk';
 	import { PUBLIC_CS_PERSONALIZE_PROJECT_UID } from '$env/static/public';
 
 	let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
 	onMount(async () => {
-		await Personalize.init(PUBLIC_CS_PERSONALIZE_PROJECT_UID);
+		if (!Personalize.getUserId()) {
+			await Personalize.init(PUBLIC_CS_PERSONALIZE_PROJECT_UID, {
+				// request
+			});
+		}
 		ContentstackLivePreview.init({
 			stackDetails: { apiKey: PUBLIC_CS_API_KEY, environment: 'prod', locale: 'en-us' },
 			mode: 'builder'
 		});
 	});
 
-	setContext('personalize', Personalize);
+	// setContext('personalize', Personalize);
 </script>
 
 <Header data={data.header}></Header>
